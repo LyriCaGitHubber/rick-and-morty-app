@@ -7,10 +7,11 @@
   margin-top: 60px;
 }
 
-:root {
-  --headline-h1: hsl(164, 24%, 59%);
+@font-face {
+  font-family: 'RickandMorty';
+  src: url(./assets/get_schwifty.ttf) format('ttf');
 }
 
 .header__headline {
-  color: var(--headline-h1);
+  font-family: 'RickandMorty', sans-serif;
 }
