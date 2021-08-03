@@ -1,0 +1,8 @@
+.character {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.character__image {
+  max-width: 100%;
+}
