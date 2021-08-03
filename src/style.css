@@ -6,3 +6,11 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+:root {
+  --headline-h1: hsl(164, 24%, 59%);
+}
+
+.header__headline {
+  color: var(--headline-h1);
+}
