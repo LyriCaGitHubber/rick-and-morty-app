@@ -1,18 +1,8 @@
 import './style.css';
 import { createElement } from './utils/createElement';
+import { createCharacterCard } from './components/character/character';
 
 const app = document.querySelector<HTMLDivElement>('#app');
-
-/* const contentSection = document.createElement('main');
-const headerElement = document.createElement('header');
-headerElement.className = 'header';
-const h1Element = document.createElement('h1');
-h1Element.className = 'header__headline';
-h1Element.innerText = 'Rick and Morty';
-headerElement.append(h1Element);
-const InputElement = document.createElement('input');
-InputElement.placeholder = 'Type something in';
-contentSection.append(InputElement); */
 
 const page = createElement('div', {
   className: 'wrapper',
@@ -29,8 +19,12 @@ const page = createElement('div', {
     createElement('main', {
       childElements: [
         createElement('input', {
+          value: 'Character finden',
+          type: 'button',
           placeholder: 'Type something in',
+          className: 'findCharacters',
         }),
+        createCharacterCard(),
       ],
     }),
   ],

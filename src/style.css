@@ -1,17 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 @font-face {
   font-family: 'RickandMorty';
-  src: url(./assets/get_schwifty.ttf) format('ttf');
+  src: url(./assets/get_schwifty.ttf) format('truetype');
 }
 
 .header__headline {
   font-family: 'RickandMorty', sans-serif;
+}
+
+.findCharacters {
+  margin-bottom: 2em;
 }
