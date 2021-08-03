@@ -6,8 +6,10 @@ const mainElement = document.createElement('main');
 const headerElement = document.createElement('header');
 const h1Element = document.createElement('h1');
 h1Element.innerText = 'Rick and Morty';
-
-mainElement.append(headerElement, h1Element);
+headerElement.append(h1Element);
+const InputElement = document.createElement('input');
+InputElement.placeholder = 'Type something in';
+mainElement.append(headerElement, InputElement);
 
 if (app !== null) {
   app.append(mainElement);
