@@ -1,5 +1,5 @@
 import { createElement } from '../../utils/createElement';
-import './character.css';
+import styles from './character.module.css';
 import type { Character } from '../../types';
 
 export function createCharacterCard({
@@ -10,10 +10,10 @@ export function createCharacterCard({
   thumbnail,
 }: Character): HTMLElement {
   return createElement('article', {
-    className: 'character',
+    className: styles.character,
     childElements: [
       createElement('img', {
-        className: 'character__image',
+        className: styles.character__image,
         src: thumbnail,
         alt: 'Character',
       }),
