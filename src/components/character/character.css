@@ -1,8 +1,13 @@
 .character {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  background: #3c3e44;
+  color: #fff;
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
+  grid-auto-flow: row;
+  border-radius: 1em;
 }
 
 .character__image {
-  max-width: 100%;
+  min-width: 100%;
+  border-radius: 1em;
 }
