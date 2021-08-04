@@ -25,6 +25,8 @@ const page = createElement('div', {
           className: 'findCharacters',
         }),
         createCharacterCard(),
+        createCharacterCard(),
+        createCharacterCard(),
       ],
     }),
   ],
