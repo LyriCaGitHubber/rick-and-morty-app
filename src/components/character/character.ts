@@ -1,29 +1,36 @@
 import { createElement } from '../../utils/createElement';
 import './character.css';
+import type { Character } from '../../types';
 
-export function createCharacterCard() {
+export function createCharacterCard({
+  name,
+  status,
+  species,
+  origin,
+  thumbnail,
+}: Character): HTMLElement {
   return createElement('article', {
     className: 'character',
     childElements: [
       createElement('img', {
         className: 'character__image',
-        src: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+        src: thumbnail,
         alt: 'Character',
       }),
       createElement('div', {
         childElements: [
           createElement('h2', {
             className: 'character__name',
-            innerText: 'Funny guy',
+            innerText: name,
           }),
           createElement('section', {
             className: 'character__aliveStatus',
             childElements: [
               createElement('p', {
-                innerText: 'Is this character alive',
+                innerText: 'Alive?',
               }),
               createElement('p', {
-                innerText: 'Yes is alive',
+                innerText: status,
               }),
             ],
           }),
@@ -31,10 +38,10 @@ export function createCharacterCard() {
             className: 'character__race',
             childElements: [
               createElement('p', {
-                innerText: 'Race of the character',
+                innerText: 'Species:',
               }),
               createElement('p', {
-                innerText: 'Is a human',
+                innerText: species,
               }),
             ],
           }),
@@ -42,10 +49,10 @@ export function createCharacterCard() {
             className: 'CharacterFirstSeenIn',
             childElements: [
               createElement('p', {
-                innerText: 'First seen in',
+                innerText: 'First seen in:',
               }),
               createElement('p', {
-                innerText: 'In the first episode',
+                innerText: origin,
               }),
             ],
           }),
