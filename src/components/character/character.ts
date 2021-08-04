@@ -14,6 +14,7 @@ export function createCharacterCard() {
         childElements: [
           createElement('h2', {
             className: 'character__name',
+            innerText: 'Funny guy',
           }),
           createElement('section', {
             className: 'character__aliveStatus',
