@@ -4,6 +4,14 @@ import { createCharacterCard } from './components/character/character';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
+const character = {
+  name: 'Morty Smith',
+  thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+  status: 'Alive',
+  species: 'Human',
+  origin: 'Earth (C-137)',
+};
+
 const page = createElement('div', {
   className: 'wrapper',
   childElements: [
@@ -24,9 +32,9 @@ const page = createElement('div', {
           placeholder: 'Type something in',
           className: 'findCharacters',
         }),
-        createCharacterCard(),
-        createCharacterCard(),
-        createCharacterCard(),
+        createCharacterCard(character),
+        createCharacterCard(character),
+        createCharacterCard(character),
       ],
     }),
   ],
