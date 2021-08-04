@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,6 +27,18 @@ body {
   font-family: 'RickandMorty', sans-serif;
 }
 
+.characterCardWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+  grid-gap: 1em;
+}
+
 .findCharacters {
   margin-bottom: 2em;
+}
+
+.mainArea {
+  width: 70%;
+  margin: 0 auto 0 auto;
 }
