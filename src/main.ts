@@ -1,16 +1,26 @@
 import './style.css';
 import { createElement } from './utils/createElement';
 import { createCharacterCard } from './components/character/character';
+import type { Character } from './types';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
-const character = {
-  name: 'Morty Smith',
-  thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
-  status: 'Alive',
-  species: 'Human',
-  origin: 'Earth (C-137)',
-};
+const characters: Character[] = [
+  {
+    name: 'Morty Smith',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+  {
+    name: 'Morty Nr 2',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+];
 
 const page = createElement('div', {
   className: 'wrapper',
@@ -32,9 +42,11 @@ const page = createElement('div', {
           placeholder: 'Type something in',
           className: 'findCharacters',
         }),
-        createCharacterCard(character),
-        createCharacterCard(character),
-        createCharacterCard(character),
+        createElement('div', {
+          childElements: characters.map((character) =>
+            createCharacterCard(character)
+          ),
+        }),
       ],
     }),
   ],
