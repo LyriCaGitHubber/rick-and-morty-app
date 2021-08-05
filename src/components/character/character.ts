@@ -27,10 +27,7 @@ export function createCharacterCard({
             className: 'character__aliveStatus',
             childElements: [
               createElement('p', {
-                innerText: 'Alive?',
-              }),
-              createElement('p', {
-                innerText: status,
+                innerText: `Death or Alive: ${status}`,
               }),
             ],
           }),
@@ -38,10 +35,7 @@ export function createCharacterCard({
             className: 'character__race',
             childElements: [
               createElement('p', {
-                innerText: 'Species:',
-              }),
-              createElement('p', {
-                innerText: species,
+                innerText: `Species: ${species}`,
               }),
             ],
           }),
@@ -49,10 +43,7 @@ export function createCharacterCard({
             className: 'CharacterFirstSeenIn',
             childElements: [
               createElement('p', {
-                innerText: 'First seen in:',
-              }),
-              createElement('p', {
-                innerText: origin,
+                innerText: `First seen in: ${origin}`,
               }),
             ],
           }),
