@@ -23,6 +23,27 @@ const characters: Character[] = [
     species: 'Human',
     origin: 'Earth (C-137)',
   },
+  {
+    name: 'Morty Nr 2',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+  {
+    name: 'Morty Smith',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+  {
+    name: 'Morty Smith',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
 ];
 
 const page = createElement('div', {
@@ -38,14 +59,16 @@ const page = createElement('div', {
       ],
     }),
     createElement('main', {
+      className: 'mainArea',
       childElements: [
         createElement('input', {
-          value: 'Character finden',
+          value: 'New Character',
           type: 'button',
           placeholder: 'Type something in',
           className: 'findCharacters',
         }),
         createElement('div', {
+          className: 'characterCardWrapper',
           childElements: characters.map((character) =>
             createCharacterCard(character)
           ),
@@ -54,6 +77,8 @@ const page = createElement('div', {
     }),
   ],
 });
+
+//document.querySelector<HTMLDivElement>('#app')?.append(mainElement)
 
 if (app !== null) {
   app.append(page);
