@@ -4,47 +4,9 @@ import { createCharacterCard } from './components/character/character';
 import type { Character } from './types';
 import { getCharacters } from './utils/api';
 
-getCharacters();
-
 const app = document.querySelector<HTMLDivElement>('#app');
 
-const characters: Character[] = [
-  {
-    name: 'Morty Smith',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-  {
-    name: 'Morty Nr 2',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-  {
-    name: 'Morty Nr 2',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-  {
-    name: 'Morty Smith',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-  {
-    name: 'Morty Smith',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/90.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-];
+const characters: Character[] = await getCharacters();
 
 const page = createElement('div', {
   className: 'wrapper',
