@@ -8,6 +8,11 @@ const app = document.querySelector<HTMLDivElement>('#app');
 
 const characters: Character[] = await getCharacters();
 
+const cardWrapper = createElement('div', {
+  className: 'characterCardWrapper',
+  childElements: characters.map((character) => createCharacterCard(character)),
+});
+
 const page = createElement('div', {
   className: 'wrapper',
   childElements: [
@@ -24,17 +29,21 @@ const page = createElement('div', {
       className: 'mainArea',
       childElements: [
         createElement('input', {
-          value: 'New Character',
-          type: 'button',
-          placeholder: 'Type something in',
+          type: 'searchbar',
+          placeholder: 'Find Character',
           className: 'findCharacters',
+          oninput: async (event) => {
+            cardWrapper.innerHTML = '';
+            const searchValue = (<HTMLInputElement>event.target).value;
+            const findCharacters = await getCharacters(searchValue);
+            const searchedCharacters = findCharacters.map((character) =>
+              createCharacterCard(character)
+            );
+            console.log(searchedCharacters);
+            cardWrapper.append(...searchedCharacters);
+          },
         }),
-        createElement('div', {
-          className: 'characterCardWrapper',
-          childElements: characters.map((character) =>
-            createCharacterCard(character)
-          ),
-        }),
+        cardWrapper,
       ],
     }),
   ],
